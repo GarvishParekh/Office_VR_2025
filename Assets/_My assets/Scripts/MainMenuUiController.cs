@@ -7,7 +7,8 @@ public class MainMenuUiController : MonoBehaviour
 {
     [SerializeField] private CanvasGroup pressAImage;
     [SerializeField] private GameObject whiteBGImage;
-    [SerializeField] private CanvasGroup officeImage;
+    [SerializeField] private CanvasGroup officeImageWhite;
+    [SerializeField] private CanvasGroup officeImageBlack;
 
     bool expStarted = false;
 
@@ -37,14 +38,18 @@ public class MainMenuUiController : MonoBehaviour
         expStarted = true;
 
         LeanTween.alphaCanvas(pressAImage, 0, 0.2f).setEaseInSine();
-        LeanTween.scale(pressAImage.gameObject, Vector3.one * 5, 0.5f).setEaseInSine();
-        yield return new WaitForSeconds(2);
-        
-        whiteBGImage.SetActive(false);
-        officeImage.gameObject.SetActive(true);
+        LeanTween.scale(pressAImage.gameObject, Vector3.one * 5, 0.5f).setEaseInSine().setOnComplete(()=>
+        {
+            LeanTween.alphaCanvas(officeImageBlack, 1, 0.2f).setEaseInSine();
+        });
+        officeImageWhite.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
 
-        yield return new WaitForSeconds(4f);
-        LeanTween.alphaCanvas(officeImage, 0, 0.5f).setEaseInSine();
+        whiteBGImage.gameObject.SetActive(false);
+        officeImageWhite.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+        LeanTween.alphaCanvas(officeImageWhite, 0, 0.5f).setEaseInSine();
     }
 
     private void ResetScene()
