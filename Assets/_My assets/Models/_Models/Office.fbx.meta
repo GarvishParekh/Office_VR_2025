@@ -1,0 +1,372 @@
+fileFormatVersion: 2
+guid: 359f95f11810b0b4bbc1beba581af324
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Entrance_reception1
+    second: {fileID: 2100000, guid: 33c876f7cd9ec8946b17ff5b253ee998, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Entrance_txr
+    second: {fileID: 2100000, guid: b105f2ad6a80bbb469477ca6b9508e7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Meeting_hall_txr
+    second: {fileID: 2100000, guid: 89221967772753145aed63f0c59673d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Right_sitting_table
+    second: {fileID: 2100000, guid: 82f885ae0ff2d6b4b9c9843805615944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cabin_01
+    second: {fileID: 2100000, guid: 335d3696472d2f04b9500bffb5715e3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cabin_flooring
+    second: {fileID: 2100000, guid: d4e1552aef81f9e459fde06b5804f9ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: celing_design1
+    second: {fileID: 2100000, guid: 240208dbf4cdb1b49834fe728d75c565, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: celing_lights_clock_txr
+    second: {fileID: 2100000, guid: 3cff23d17bb95894b981ec90400c4b67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: color_carpet_txr
+    second: {fileID: 2100000, guid: 1beef69bca8456e4788b3649e32f605f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flooring_txr
+    second: {fileID: 2100000, guid: 2970184c2bacbbd4f954892cb58320f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: girl_washroom_txr
+    second: {fileID: 2100000, guid: cf1abdd9049f5cc41a5757c98628c1bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kitchen_and_washroom_txr
+    second: {fileID: 2100000, guid: 19a45f31c8c593f44add642ffb26a658, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: left_upper_floor_txr
+    second: {fileID: 2100000, guid: 6613c71ba0de5f347915f4461a994f83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: main_cabin_02txr
+    second: {fileID: 2100000, guid: 9d89b9f59cf347441af2202d2faf970f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: main_cabin_txr1
+    second: {fileID: 2100000, guid: dde7435b2e2bb6f419300e1cf5ffa387, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: meeting_rooms_wall_txr
+    second: {fileID: 2100000, guid: 2716b9d525f49e947a0f0bacd9129345, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: office_glass_txr
+    second: {fileID: 2100000, guid: 776310866abd693448d65f9b04f4b5b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: office_steel_txr
+    second: {fileID: 2100000, guid: fe85edb5f132221409a005454bf3b573, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: right_upper_floor_txr
+    second: {fileID: 2100000, guid: 917a0a7e53ce1874691758dd5356b549, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: staircase1
+    second: {fileID: 2100000, guid: 754fb1bcee2a07347b15f1cffc58c3bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: storage_box_hall
+    second: {fileID: 2100000, guid: dd98a2aad3098284991deffaf6d6b9bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_handle_lights_txr
+    second: {fileID: 2100000, guid: ede5ed8552135b0498fea8c003af0a38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: temple_sitting
+    second: {fileID: 2100000, guid: 2769937bc8a1bb74b964ba99a020cc73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: text_glass_txr
+    second: {fileID: 2100000, guid: 22d9aeb4cb8897e4ea6f82a39529f0f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: upper_ceiling_wall_txr
+    second: {fileID: 2100000, guid: b99890f4f712ec045b60e44ca4f46771, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_txr1
+    second: {fileID: 2100000, guid: 9b5c555888b248544a0de9c059d018ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window_meeting_hall_txr
+    second: {fileID: 2100000, guid: b3f22eb8593f8144e869d63ad3ea52e9, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Entrance
+    second: {fileID: 2800000, guid: ad77b046add55a14d956361a7c7176e6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Meeting_hall
+    second: {fileID: 2800000, guid: 9190c0d9c19d4be4dbf1a3e5271a6dd0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Right_sitting_table
+    second: {fileID: 2800000, guid: 4726965e0a34ba1429604da406b13179, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabin flooring1
+    second: {fileID: 2800000, guid: 6fcb6eb4e21c5f944820d8c6e8ce178d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabin_01
+    second: {fileID: 2800000, guid: d2f698212fc64d647816be903b18257d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: celing design1
+    second: {fileID: 2800000, guid: 67f0d0ed817a3b242bd6feda98ba85a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: celing lights clock
+    second: {fileID: 2800000, guid: ead9bc9ed73e84c49a0195acd840c6b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: color_carpet
+    second: {fileID: 2800000, guid: 3abc9aa4f0f8df846ad58ad490430dbf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: entrance reception
+    second: {fileID: 2800000, guid: 78ce74458ec1ec746a5157527741e8f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: flooring
+    second: {fileID: 2800000, guid: fe9e1416b7df0df4cba88764025b5545, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: girl_washroom
+    second: {fileID: 2800000, guid: 36f2c92331e0555428f00191ca3e84b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: kitchen_and_washroom
+    second: {fileID: 2800000, guid: 64126a64c4cd45d4eb23cfdd68a2e09a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: left_upper_floor
+    second: {fileID: 2800000, guid: fc3c0ce55e7bb984db1ad02c292800dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: main_cabin
+    second: {fileID: 2800000, guid: 7eb92409d45102548bf7f1a6c0e04118, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: main_cabin_02
+    second: {fileID: 2800000, guid: d9ac357da171a6844a983ca43a9b1196, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: meeting_rooms_wall
+    second: {fileID: 2800000, guid: 1c35248664b1d7248aeb630f42abbf07, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: office glass
+    second: {fileID: 2800000, guid: 691fa4d5a0e6e9742b72493aa5cca4fc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: office steel
+    second: {fileID: 2800000, guid: 97dd58d5a2d5d43468bb533a01265411, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: right_upper_floor
+    second: {fileID: 2800000, guid: 3e88a36594e92ff4e9f62fe09cafdd24, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: staircase1
+    second: {fileID: 2800000, guid: c9c74aec2b2ac46439dfd2a8203fb512, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: storage box
+    second: {fileID: 2800000, guid: 038018db5a0721f4fbae902b2a0e0187, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: table_handle_lights
+    second: {fileID: 2800000, guid: 312ca873aa69fb044b5b2bb9edea1d00, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: temple_sitting
+    second: {fileID: 2800000, guid: a7166b5ffc6e76748b8ba31d7b21e661, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: text_glass
+    second: {fileID: 2800000, guid: 782af05af33c3c349a8402fb2d9f1dea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: upper ceiling
+    second: {fileID: 2800000, guid: 90a4c13908c623545a465514aac138cc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2800000, guid: feba515b3ffe5ec408d4f5f367aac1a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: window_meeting_hall
+    second: {fileID: 2800000, guid: c8dfc34877544c84ab1416ae5eaa2cef, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 0
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
