@@ -5,6 +5,7 @@ public class UiManager : MonoBehaviour
 {
     public static UiManager instance;
     [SerializeField] private List<CanvasIdentity> canvasList = new List<CanvasIdentity>();
+    [SerializeField] private List<CanvasIdentity> popupList = new List<CanvasIdentity>();
 
     private void Awake()
     {
@@ -44,4 +45,27 @@ public class UiManager : MonoBehaviour
             canvas.CloseCanvas();
         }
     }
+
+    public void OpenPopUp(CanvasNames desireCanvas)
+    {
+        foreach (CanvasIdentity poppup in popupList)
+        {
+            if (poppup.GetCanvasName() == desireCanvas)
+            {
+                poppup.OpenCanvas();
+            }
+        }
+    }
+
+    public void ClosePopUp(CanvasNames desireCanvas)
+    {
+        foreach (CanvasIdentity poppup in popupList)
+        {
+            if (poppup.GetCanvasName() == desireCanvas)
+            {
+                poppup.CloseCanvas();
+            }
+        }
+    }
+
 }

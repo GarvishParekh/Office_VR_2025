@@ -3,13 +3,17 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class MainMenuUiController : MonoBehaviour
 {
     UiManager uiManager;
 
     [Header("<size=13><b>Vr component")]
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Transform playerHeadTransform;
     [SerializeField] private List<GameObject> uiRayPointList = new List<GameObject>();
+    [SerializeField] private Transform meetingCanvasTransform;
 
     [Header("<size=13><b>Home ui animation")]
     [SerializeField] private CanvasGroup homeCanvas;
@@ -27,7 +31,6 @@ public class MainMenuUiController : MonoBehaviour
 
     [Header("<size=13><b>Office tour components")]
     [SerializeField] private GameObject hotspotPoints;
-
 
     bool expStarted = false;
 
@@ -57,6 +60,8 @@ public class MainMenuUiController : MonoBehaviour
             ResetScene();
         }
     }
+
+    
 
     IEnumerator StartTheExp()
     {
@@ -88,15 +93,10 @@ public class MainMenuUiController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void StartOfficeTour()
-    {
-        ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
-        uiManager.OpenCanvas(CanvasNames.C_INSTRUCTION);
-    }
-
+    //--------------------------- TOGGLE FUNCTIONS ---------------------------
     public void B_OnToggleChange()
     {
-        foreach (Toggle contentToggle in contentToggleList) 
+        foreach (Toggle contentToggle in contentToggleList)
         {
             //ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
             int index = contentToggle.transform.GetSiblingIndex();
@@ -105,6 +105,15 @@ public class MainMenuUiController : MonoBehaviour
             else contentHolderList[index].SetActive(false); ;
         }
     }
+    
+    //--------------------------- BUTTON FUNCTIONS ---------------------------
+
+    public void StartOfficeTour()
+    {
+        ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
+        uiManager.OpenCanvas(CanvasNames.C_INSTRUCTION);
+    }
+
 
     public void B_OpenHRPolicies()
     {
@@ -119,14 +128,46 @@ public class MainMenuUiController : MonoBehaviour
         uiManager.OpenCanvas(CanvasNames.C_HOME);
     }
 
+    public void B_OrgOverview()
+    {
+        ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
+        uiManager.OpenCanvas(CanvasNames.C_ORG_OVERVIEW);
+    }
+
+    public void B_RoomForLearning()
+    {
+        ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
+        uiManager.OpenCanvas(CanvasNames.C_OPPORTUNITIES_AND_LEARNING);
+    }
+
     public void B_CloseInstruction()
     {
         foreach (GameObject rayPointer in uiRayPointList)
         {
-            rayPointer.SetActive(false);
+            //rayPointer.SetActive(false);
         }
         ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
         uiManager.CloseAllCanvas();
         hotspotPoints.SetActive(true);
     }
+
+    public void B_OpenSetMeeting()
+    {
+        Vector3 headRotation = playerTransform.eulerAngles;
+        headRotation.x = 0; headRotation.z = 0;
+
+        Vector3 newPosition = playerTransform.position;
+
+        meetingCanvasTransform.position = newPosition;
+        meetingCanvasTransform.rotation = Quaternion.Euler(headRotation);
+
+        uiManager.OpenPopUp(CanvasNames.P_MEETING);
+    }
+
+    public void B_CloseSetMeeting()
+    {
+        meetingCanvasTransform.position = playerTransform.position;
+        uiManager.ClosePopUp(CanvasNames.P_MEETING);
+    }
+
 }

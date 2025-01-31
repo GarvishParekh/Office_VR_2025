@@ -42,5 +42,8 @@ public enum CanvasNames
 {
     C_HOME,
     C_HRPOLICY,
-    C_INSTRUCTION
+    C_INSTRUCTION,
+    C_ORG_OVERVIEW,
+    C_OPPORTUNITIES_AND_LEARNING,
+    P_MEETING
 }
