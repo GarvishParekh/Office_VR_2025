@@ -3,17 +3,30 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 
 public class MainMenuUiController : MonoBehaviour
 {
     UiManager uiManager;
 
+    [Header("<size=13><b>Arrow animation component")]
+    [SerializeField] private CanvasGroup meetOurTeamCanvas;
+    [SerializeField] private GameObject arrowHolder;
+    [SerializeField] private Transform endpoint;
+
+    [Header("<size=13><b>Meeting canvas component")]
+    [SerializeField] private TMP_Text employeeNameText;
+    [SerializeField] private CanvasGroup meetingConfirmedToast;
+    [SerializeField] private GameObject meetingCanvasButtonsHolder;
+    [SerializeField] private Transform meetingCanvasTransform;
+    [SerializeField] private Vector3 meetingCanvasDefaultPos;
+    [SerializeField] private List<CanvasGroup> employeeCardsList = new List<CanvasGroup>();
+
     [Header("<size=13><b>Vr component")]
+    [SerializeField] private GameObject startupCanvas;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform playerHeadTransform;
     [SerializeField] private List<GameObject> uiRayPointList = new List<GameObject>();
-    [SerializeField] private Transform meetingCanvasTransform;
 
     [Header("<size=13><b>Home ui animation")]
     [SerializeField] private CanvasGroup homeCanvas;
@@ -36,7 +49,10 @@ public class MainMenuUiController : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 90;
+        Application.targetFrameRate = 120;
+        startupCanvas.SetActive(true);
+
+        meetingCanvasDefaultPos = meetingCanvasTransform.position;
         hotspotPoints.SetActive(false);
     }
 
@@ -60,7 +76,6 @@ public class MainMenuUiController : MonoBehaviour
             ResetScene();
         }
     }
-
     
 
     IEnumerator StartTheExp()
@@ -79,7 +94,7 @@ public class MainMenuUiController : MonoBehaviour
         whiteBGImage.gameObject.SetActive(false);
         officeImageWhite.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         LeanTween.alphaCanvas(officeImageWhite, 0, 0.5f).setEaseInSine().setOnComplete(()=>
         {
             homeCanvas.transform.localScale = Vector3.zero;
@@ -149,25 +164,108 @@ public class MainMenuUiController : MonoBehaviour
         ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
         uiManager.CloseAllCanvas();
         hotspotPoints.SetActive(true);
+
+        StartArrowAnimation();
     }
 
-    public void B_OpenSetMeeting()
+    public void B_OpenSetMeeting(string employeeName)
     {
+        employeeNameText.text = employeeName;
+        ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
+
+        meetingCanvasButtonsHolder.SetActive(true);
+        meetingConfirmedToast.gameObject.SetActive(false);
+
         Vector3 headRotation = playerTransform.eulerAngles;
         headRotation.x = 0; headRotation.z = 0;
 
         Vector3 newPosition = playerTransform.position;
+        newPosition.y = meetingCanvasDefaultPos.y;   
 
         meetingCanvasTransform.position = newPosition;
         meetingCanvasTransform.rotation = Quaternion.Euler(headRotation);
 
+        EmployeeCard(false);
+        hotspotPoints.SetActive(false);
+
         uiManager.OpenPopUp(CanvasNames.P_MEETING);
     }
 
-    public void B_CloseSetMeeting()
+    public void B_CancelMeeting()
     {
-        meetingCanvasTransform.position = playerTransform.position;
-        uiManager.ClosePopUp(CanvasNames.P_MEETING);
+        ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
+
+        uiManager.ClosePopUp(success: (bool isSuccess) =>
+        {
+            if (isSuccess)
+            {
+                Vector3 defaultPosition = meetingCanvasDefaultPos;
+                meetingCanvasTransform.position = defaultPosition;
+
+                EmployeeCard(true);
+                hotspotPoints.SetActive(true);
+            }
+        },
+        CanvasNames.P_MEETING
+        );
     }
 
+    public void B_ConfirmMeeting()
+    {
+        ActionManager.UiNavigated?.Invoke(E_ButtonSFX.BUTTON_SFX);
+
+        meetingCanvasButtonsHolder.SetActive(false);
+        meetingConfirmedToast.gameObject.SetActive(true);
+        meetingConfirmedToast.alpha = 1;
+
+        LeanTween.alphaCanvas(meetingConfirmedToast, 0, 0.5f).setDelay(1f).setOnComplete(() =>
+        {
+            uiManager.ClosePopUp(success: (bool isSuccess) =>
+            {
+                if (isSuccess)
+                {
+                    Vector3 defaultPosition = meetingCanvasDefaultPos;
+                    meetingCanvasTransform.position = defaultPosition;
+
+                    EmployeeCard(true);
+                    hotspotPoints.SetActive(true);
+                }
+            },
+            CanvasNames.P_MEETING
+            );
+        });
+    }
+
+    private void EmployeeCard(bool enable)
+    {
+        if (enable == true)
+        {
+            foreach (CanvasGroup card in employeeCardsList)
+            {
+                LeanTween.alphaCanvas(card, 1, 0.6f).setEaseInOutSine();
+                card.interactable = true;
+            }
+        }
+        else if (enable == false)
+        {
+            foreach (CanvasGroup card in employeeCardsList)
+            {
+                LeanTween.alphaCanvas(card, 0, 0.6f).setEaseInOutSine();
+                card.interactable = false;
+            }
+        }
+        else return;
+    }
+
+    private void StartArrowAnimation()
+    {
+        meetOurTeamCanvas.gameObject.SetActive(true);
+        LeanTween.move(arrowHolder, endpoint.position, 2f).setLoopCount(10).setOnComplete(()=>
+        {
+            LeanTween.alphaCanvas(meetOurTeamCanvas, 0, 1f).setOnComplete(()=>
+            {
+                meetOurTeamCanvas.gameObject.SetActive(false);
+            });
+        });
+    }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class UiManager : MonoBehaviour
 {
@@ -22,7 +23,10 @@ public class UiManager : MonoBehaviour
             }
             else
             {
-                canvas.CloseCanvas();
+                canvas.CloseCanvas(success: (bool isSuccess)=>
+                {
+                    // null
+                });
             }
         }
     }
@@ -33,7 +37,10 @@ public class UiManager : MonoBehaviour
         {
             if (canvas.GetCanvasName() == desireCanvas)
             {
-                canvas.CloseCanvas();
+                canvas.CloseCanvas(success: (bool isSuccess) =>
+                {
+                    // null
+                });
             }
         }
     }
@@ -42,7 +49,10 @@ public class UiManager : MonoBehaviour
     {
         foreach (CanvasIdentity canvas in canvasList)
         {
-            canvas.CloseCanvas();
+            canvas.CloseCanvas(success: (bool isSuccess) =>
+            {
+                // null
+            });
         }
     }
 
@@ -57,13 +67,16 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void ClosePopUp(CanvasNames desireCanvas)
+    public void ClosePopUp(Action<bool> success, CanvasNames desireCanvas)
     {
         foreach (CanvasIdentity poppup in popupList)
         {
             if (poppup.GetCanvasName() == desireCanvas)
             {
-                poppup.CloseCanvas();
+                poppup.CloseCanvas(success: (bool isSuccess) =>
+                {
+                    success?.Invoke(true);
+                });
             }
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent (typeof(CanvasGroup))] 
@@ -19,15 +20,19 @@ public class CanvasIdentity: MonoBehaviour, ICanvasAnimation
     public void OpenCanvas() 
     {
         ResetCanvas();
-        LeanTween.scale(gameObject, Vector3.one, 0.4f).setEaseInSine();
-        LeanTween.alphaCanvas(canvasGroup, 1, 0.5f).setEaseInSine();
+        LeanTween.scale(gameObject, Vector3.one, 0.4f).setDelay(0.5f).setEaseInSine();
+        LeanTween.alphaCanvas(canvasGroup, 1, 0.5f).setDelay(0.5f).setEaseInSine();
         canvasGroup.interactable = true;
     }
-    public void CloseCanvas()
+    public void CloseCanvas(Action<bool> success)
     {
         canvasGroup.interactable = false;
         LeanTween.scale(gameObject, Vector3.one * 1.3f, 0.5f).setEaseInSine();
-        LeanTween.alphaCanvas(canvasGroup, 0, 0.4f).setEaseInSine();
+        LeanTween.alphaCanvas(canvasGroup, 0, 0.4f).setEaseInSine().setOnComplete(()=>
+        {
+            success?.Invoke(true);
+        });
+
     }
     public void ResetCanvas()
     {
@@ -45,5 +50,5 @@ public enum CanvasNames
     C_INSTRUCTION,
     C_ORG_OVERVIEW,
     C_OPPORTUNITIES_AND_LEARNING,
-    P_MEETING
+    P_MEETING,
 }
